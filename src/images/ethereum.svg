@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="200px" height="200px" viewBox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="preserve">
+<style type="text/css">
+<![CDATA[
+	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#076BB3;}
+	.st1{fill-rule:evenodd;clip-rule:evenodd;fill:#0776C1;}
+	.st2{fill-rule:evenodd;clip-rule:evenodd;fill:#0777C1;}
+	.st3{fill-rule:evenodd;clip-rule:evenodd;fill:#3BA1EA;}
+	.st4{fill-rule:evenodd;clip-rule:evenodd;fill:#0969B1;}
+	.st5{fill-rule:evenodd;clip-rule:evenodd;fill:#3D5877;}
+	.st6{fill-rule:evenodd;clip-rule:evenodd;fill:#3DA5EF;}
+	.st7{fill-rule:evenodd;clip-rule:evenodd;fill:#0B67AF;}
+	.st8{fill-rule:evenodd;clip-rule:evenodd;fill:#0D66AD;}
+	.st9{fill-rule:evenodd;clip-rule:evenodd;fill:#0D7CC7;}
+	.st10{fill-rule:evenodd;clip-rule:evenodd;fill:#0E64AB;}
+	.st11{fill-rule:evenodd;clip-rule:evenodd;fill:#405873;}
+	.st12{fill-rule:evenodd;clip-rule:evenodd;fill:#414042;}
+	.st13{fill-rule:evenodd;clip-rule:evenodd;fill:#425E7D;}
+	.st14{fill-rule:evenodd;clip-rule:evenodd;fill:#445C78;}
+	.st15{fill-rule:evenodd;clip-rule:evenodd;fill:#445F7F;}
+	.st16{fill-rule:evenodd;clip-rule:evenodd;fill:#445F80;}
+	.st17{fill-rule:evenodd;clip-rule:evenodd;fill:#454A75;}
+	.st18{fill-rule:evenodd;clip-rule:evenodd;fill:#456284;}
+	.st19{fill-rule:evenodd;clip-rule:evenodd;fill:#466284;}
+	.st20{fill-rule:evenodd;clip-rule:evenodd;fill:#466486;}
+	.st21{fill-rule:evenodd;clip-rule:evenodd;fill:#484948;}
+	.st22{fill-rule:evenodd;clip-rule:evenodd;fill:#486588;}
+	.st23{fill-rule:evenodd;clip-rule:evenodd;fill:#48989B;}
+	.st24{fill-rule:evenodd;clip-rule:evenodd;fill:#1063AA;}
+	.st25{fill-rule:evenodd;clip-rule:evenodd;fill:#AE4CBF;}
+	.st26{fill-rule:evenodd;clip-rule:evenodd;fill:#1162A9;}
+	.st27{fill-rule:evenodd;clip-rule:evenodd;fill:#AF4CBF;}
+	.st28{fill-rule:evenodd;clip-rule:evenodd;fill:#AF4CC0;}
+	.st29{fill-rule:evenodd;clip-rule:evenodd;fill:#1280CA;}
+	.st30{fill-rule:evenodd;clip-rule:evenodd;fill:#1360A6;}
+	.st31{fill-rule:evenodd;clip-rule:evenodd;fill:#1361A7;}
+	.st32{fill-rule:evenodd;clip-rule:evenodd;fill:#1370B5;}
+	.st33{fill-rule:evenodd;clip-rule:evenodd;fill:#1371B5;}
+	.st34{fill-rule:evenodd;clip-rule:evenodd;fill:#E3B371;}
+	.st35{fill-rule:evenodd;clip-rule:evenodd;fill:#E3B372;}
+	.st36{fill-rule:evenodd;clip-rule:evenodd;fill:#1583CD;}
+	.st37{fill-rule:evenodd;clip-rule:evenodd;fill:#165EA3;}
+	.st38{fill-rule:evenodd;clip-rule:evenodd;fill:#4A698D;}
+	.st39{fill-rule:evenodd;clip-rule:evenodd;fill:#16A0FE;}
+	.st40{fill-rule:evenodd;clip-rule:evenodd;fill:#4A9DA0;}
+	.st41{fill-rule:evenodd;clip-rule:evenodd;fill:#4B698E;}
+	.st42{fill-rule:evenodd;clip-rule:evenodd;fill:#4C6888;}
+	.st43{fill-rule:evenodd;clip-rule:evenodd;fill:#4C6B8F;}
+	.st44{fill-rule:evenodd;clip-rule:evenodd;fill:#195CA0;}
+	.st45{fill-rule:evenodd;clip-rule:evenodd;fill:#4D647F;}
+	.st46{fill-rule:evenodd;clip-rule:evenodd;fill:#4D6C91;}
+	.st47{fill-rule:evenodd;clip-rule:evenodd;fill:#4E647E;}
+	.st48{fill-rule:evenodd;clip-rule:evenodd;fill:#4E6C92;}
+	.st49{fill-rule:evenodd;clip-rule:evenodd;fill:#4E6D93;}
+	.st50{fill-rule:evenodd;clip-rule:evenodd;fill:#4F6E94;}
+	.st51{fill-rule:evenodd;clip-rule:evenodd;fill:#4F6F94;}
+	.st52{fill-rule:evenodd;clip-rule:evenodd;fill:#4F6F95;}
+	.st53{fill-rule:evenodd;clip-rule:evenodd;fill:#B04DC1;}
+	.st54{fill-rule:evenodd;clip-rule:evenodd;fill:#821CA7;}
+	.st55{fill-rule:evenodd;clip-rule:evenodd;fill:#B2B2B2;}
+	.st56{fill-rule:evenodd;clip-rule:evenodd;fill:#1D88D2;}
+	.st57{fill-rule:evenodd;clip-rule:evenodd;fill:#8991B1;}
+	.st58{fill-rule:evenodd;clip-rule:evenodd;fill:#1E88D2;}
+	.st59{fill-rule:evenodd;clip-rule:evenodd;fill:#506F96;}
+	.st60{fill-rule:evenodd;clip-rule:evenodd;fill:#507097;}
+	.st61{fill-rule:evenodd;clip-rule:evenodd;fill:#517198;}
+	.st62{fill-rule:evenodd;clip-rule:evenodd;fill:#52729A;}
+	.st63{fill-rule:evenodd;clip-rule:evenodd;fill:#52739A;}
+	.st64{fill-rule:evenodd;clip-rule:evenodd;fill:#53749C;}
+	.st65{fill-rule:evenodd;clip-rule:evenodd;fill:#54759D;}
+	.st66{fill-rule:evenodd;clip-rule:evenodd;fill:#55769E;}
+	.st67{fill-rule:evenodd;clip-rule:evenodd;fill:#55779E;}
+	.st68{fill-rule:evenodd;clip-rule:evenodd;fill:#578FCB;}
+	.st69{fill-rule:evenodd;clip-rule:evenodd;fill:#BA945F;}
+	.st70{fill-rule:evenodd;clip-rule:evenodd;fill:#594A42;}
+	.st71{fill-rule:evenodd;clip-rule:evenodd;fill:#BCBEC0;}
+	.st72{fill-rule:evenodd;clip-rule:evenodd;}
+	.st73{fill:#FFA400;}
+	.st74{fill-rule:evenodd;clip-rule:evenodd;fill:#F1F1F1;}
+	.st75{fill-rule:evenodd;clip-rule:evenodd;fill:#F3F3F3;}
+	.st76{fill-rule:evenodd;clip-rule:evenodd;fill:#292A29;}
+	.st77{fill-rule:evenodd;clip-rule:evenodd;fill:#295789;}
+	.st78{fill-rule:evenodd;clip-rule:evenodd;fill:#F7F7F7;}
+	.st79{fill-rule:evenodd;clip-rule:evenodd;fill:#297EE1;}
+	.st80{fill-rule:evenodd;clip-rule:evenodd;fill:#98BCE4;}
+	.st81{fill:#003A70;}
+	.st82{fill-rule:evenodd;clip-rule:evenodd;fill:#FDFCFC;}
+	.st83{fill-rule:evenodd;clip-rule:evenodd;fill:#FDFDFD;}
+	.st84{fill-rule:evenodd;clip-rule:evenodd;fill:#FDFEFE;}
+	.st85{fill-rule:evenodd;clip-rule:evenodd;fill:#FE7100;}
+	.st86{fill-rule:evenodd;clip-rule:evenodd;fill:#FEFEFE;}
+	.st87{fill-rule:evenodd;clip-rule:evenodd;fill:#62688E;}
+	.st88{fill-rule:evenodd;clip-rule:evenodd;fill:#63D2D6;}
+	.st89{fill-rule:evenodd;clip-rule:evenodd;fill:#9C1CB1;}
+	.st90{fill-rule:evenodd;clip-rule:evenodd;fill:#9F7757;}
+	.st91{fill-rule:evenodd;clip-rule:evenodd;fill:#333333;}
+	.st92{fill-rule:evenodd;clip-rule:evenodd;fill:#344D6A;}
+	.st93{fill-rule:evenodd;clip-rule:evenodd;fill:#00458D;}
+	.st94{fill-rule:evenodd;clip-rule:evenodd;fill:#005196;}
+	.st95{fill-rule:evenodd;clip-rule:evenodd;fill:#0171BC;}
+	.st96{fill-rule:evenodd;clip-rule:evenodd;fill:#025B92;}
+	.st97{fill-rule:evenodd;clip-rule:evenodd;fill:#025D94;}
+	.st98{fill-rule:evenodd;clip-rule:evenodd;fill:#0270BB;}
+	.st99{fill-rule:evenodd;clip-rule:evenodd;fill:#036EB8;}
+	.st100{fill-rule:evenodd;clip-rule:evenodd;fill:#055890;}
+	.st101{fill-rule:evenodd;clip-rule:evenodd;fill:#056CB5;}
+]]>
+</style>
+<path class="st57" d="M43.8,101.6c6.8-11.2,13.6-22.4,20.4-33.7c11.3-18.8,22.7-37.6,34-56.4c0.3-0.6,0.6-1.1,0.9-1.7
+	c0.3-0.1,0.6-0.1,0.7,0.3c0.4,2.1,0.4,4.2,0.4,6.3c0,18.7,0,37.4,0,56.1c0,1.2,0.1,2.5-0.2,3.7c-0.3,1-1.2,1.4-2,1.8
+	c-17,7.8-34,15.4-51,23.2c-0.9,0.4-1.8,1.1-2.8,0.4l-0.1,0.1L43.8,101.6z"/>
+<path class="st87" d="M99.3,76.8c0-16.1,0-32.2,0.1-48.4c0-5.3,0-10.7,0-16c0-0.8-0.3-1.6,0.3-2.3c15.4,25.5,30.7,51,46.1,76.4
+	c3,5,6,10,9,15.1c-0.9,0.6-1.7,0.1-2.4-0.3c-10-4.6-19.9-9.1-29.9-13.6c-7.2-3.3-14.3-6.5-21.5-9.8c-0.5-0.2-1.1-0.4-1.5-0.8
+	C99.4,77,99.4,76.9,99.3,76.8z"/>
+<path class="st87" d="M44,101.6c4.6-1.6,8.8-3.8,13.2-5.8C71.1,89.6,84.9,83.3,98.7,77c0.2-0.1,0.4-0.1,0.6-0.2c0,0,0.1,0.1,0.1,0.1
+	c0.7,0.8,0.7,1.7,0.7,2.7c0,17.6,0,35.3,0,52.9c0,0.7-0.2,1.4-0.3,2.1c-0.6,0.7-1.1,0-1.5-0.2c-17.8-10.5-35.6-21-53.4-31.6
+	C44.5,102.5,43.8,102.4,44,101.6z"/>
+<path class="st17" d="M99.9,134.6c-0.7-0.5-0.5-1.3-0.5-2c0-18.6,0-37.1,0-55.7c4.7,1.5,9,3.9,13.4,5.9
+	c13.8,6.2,27.6,12.5,41.3,18.7c0.2,0.1,0.4,0.1,0.6,0.2c0.2,0.8-0.6,0.9-1,1.2c-17.8,10.5-35.6,21-53.4,31.5
+	C100.3,134.5,100.1,134.5,99.9,134.6z"/>
+<path class="st57" d="M99,190.8c-4.4-6.3-8.8-12.6-13.3-18.9c-13.9-19.7-27.9-39.3-41.8-59c4.3,1.8,8,4.5,12,6.8
+	c13.8,8.1,27.5,16.3,41.3,24.4c0.8,0.5,1.6,1.1,2.6,1c0.3,0.7,0.3,1.4,0.3,2.1c0,12.9,0,25.8,0,38.8c0,1.5,0,3-0.3,4.5
+	C99.7,190.9,99.4,190.9,99,190.8z"/>
+<path class="st87" d="M99.8,190.5c-0.6-0.6-0.4-1.4-0.4-2c0-13.7,0-27.4,0-41.1c0-0.8-0.1-1.6,0.4-2.3
+	c18.1-10.7,36.2-21.4,54.3-32.1c0.4,0.5,0.1,0.8-0.1,1.1C136,139.5,117.9,165,99.8,190.5z"/>
+</svg>

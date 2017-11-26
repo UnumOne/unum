@@ -1,0 +1,66 @@
+<div class="admin">
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" ui-sref="main">
+          <img src="/images/unum-logo.svg" width="25">
+          Unum
+        </a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a ui-sref="main">Home</a>
+          </li>
+          <li>
+            <a ui-sref="learn">Learn</a>
+          </li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </nav>
+
+  <div class="container" style="margin-top:40px;">
+    <div class="row exchange">
+      <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">Items</div>
+          <div class="panel-body">
+            <div class="currency" 
+              ng-repeat="item in vm.items" 
+              ng-class="{active:vm.activeItem == item}"
+              ng-click="vm.activeItem = item">
+              <img ng-src="/images/{{ item.image }}" width="32px">
+              {{item.name}}
+              <div class="text-muted">
+                @ ${{ item.price | number:2}}
+              </div>
+            </div>
+          </div>
+        </div>        
+      </div>
+      <div class="col-md-6">
+        <div class="panel panel-default" ng-if="vm.activeItem">
+          <div class="panel-heading">Set {{vm.activeItem.name}} Price</div>
+          <div class="panel-body">
+            <form>
+              <div class="form-group">
+                <label>New Price</label>
+                <input type="text" class="form-control" ng-model="vm.newPrice">
+              </div>
+              <button class="btn btn-primary" ng-click="vm.setPrice()">
+                Set Price
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

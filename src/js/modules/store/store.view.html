@@ -1,0 +1,557 @@
+<div class="store">
+	<nav class="navbar navbar-default">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" ui-sref="main">
+					<img src="/images/unum-logo.svg" width="25">
+					Unum
+				</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse" uib-collapse="navCollapsed">
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a ui-sref="main">Home</a>
+					</li>
+					<li>
+						<a ui-sref="learn">Learn</a>
+					</li>
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+	</nav>
+	<nav class="navbar options" ng-if="vm.connected">
+		<div class="container">
+			<ul class="nav navbar-nav">
+				<li ng-class="{active:vm.state=='buy'}">
+					<a ng-click="vm.setState('buy')" href="">
+						<i class="fa fa-chevron-circle-down"></i> Buy Unum
+					</a>
+				</li>
+				<li ng-class="{active:vm.state=='sell'}">
+					<a ng-click="vm.setState('sell')" href="">
+						<i class="fa fa-chevron-circle-down"></i> Sell Unum
+					</a>
+				</li>
+				<li ng-class="{active:vm.state=='send'}">
+					<a ng-click="vm.setState('send')" href="" >
+						<i class="fa fa-paper-plane"></i> Send Unum
+					</a>
+				</li>
+			</ul>
+		</div>
+	</nav>		
+	<div class="container">
+		<div class="row" ng-if="vm.connected">
+			<div class="col-md-7 col-md-offset-3 col-sm-12">
+				<div class="text-right text-muted" style="margin-bottom: 10px;">
+					Balance: {{ vm.userUnumBalance | number:4 }} UD1
+				</div>
+				<div class="exchange panel panel-default"  ng-if="vm.state=='buy' ">
+					<div class="panel-heading">
+						Buy Unum
+					</div>
+					<div class="panel-body">
+						<form>
+							<h4>Buy With</h4>
+							<div class="row currencies">
+								<div class="currency" 
+									ng-repeat="item in vm.items" 
+									ng-class="{active:vm.activeItem == item}"
+									ng-click="vm.setActiveCurrency(item)">
+									<img ng-src="/images/{{ item.image }}" width="32px">
+									{{item.name}}
+									<div class="text-muted">
+										@ ${{ item.price | number:2}}
+									</div>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-xs-6">
+									<h4>Amount</h4>
+								</div>
+								<div class="col-xs-6 text-right">
+									<div 
+										class="text-muted" 
+										ng-class="{'text-danger':vm.error}"
+										style="margin-top:10px;">
+										You have: {{ vm.activeItem.userBalance | number:4 }} {{ vm.activeItem.abbreviation }}
+									</div>
+								</div>
+							</div>
+
+							<div class="row" style="display:relative;">
+								<div class="col-xs-6">
+									<div class="form-group">
+										<div class="input-group">
+											<input 
+											type="number" 
+											class="form-control currency-input" 
+											placeholder="0.00" 
+											min="0"
+											ng-model="vm.buyUSD"
+											ng-keyup="vm.calcBuyCurrencyAmount()">
+											<span class="input-group-addon">UD1</span>
+										</div>
+									</div>
+
+									<i class="fa fa-exchange currency-exchange-icon"></i>
+								</div>
+								<div class="col-xs-6">
+									<div class="form-group">
+										<div class="input-group">
+											<input 
+											type="number" 
+											class="form-control currency-input" 
+											placeholder="0.00"
+											min="0"
+											ng-model="vm.buyCurrency"
+											ng-keyup="vm.calcBuyUSDAmount()">
+											<span class="input-group-addon">
+												{{ vm.activeItem.abbreviation }}
+											</span>
+										</div>
+									</div>
+								</div>								
+							</div>
+							<div ng-if="vm.error" class="bg-danger text-center" style="padding:10px; margin-bottom:10px;">
+								<strong>{{ vm.error }}</strong>
+							</div>
+							<div>
+								<button 
+									class="btn btn-primary btn-lg btn-block" 
+									ng-class="{disabled:!vm.buyCurrency || vm.error}"
+									ng-click="vm.confirmBuyModal()">
+									Buy Unum
+								</button>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="exchange panel panel-default"  ng-if="vm.state=='sell'">
+					<div class="panel-heading">
+						Sell Unum
+					</div>
+					<div class="panel-body">
+						<form>
+							<h4>Sell For</h4>
+							<div class="row currencies">
+								<div class="currency" 
+									ng-repeat="item in vm.items" 
+									ng-class="{active:vm.activeItem == item}"
+									ng-click="vm.setActiveCurrency(item)">
+									<img ng-src="/images/{{ item.image }}" width="32px">
+									{{item.name}}
+									<div class="text-muted">
+										@ ${{ item.price | number:2}}
+									</div>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-xs-6">
+									<h4>Amount</h4>
+								</div>
+								<div class="col-xs-6 text-right">
+									<div 
+										class="text-muted" 
+										ng-class="{'text-danger':vm.error}"
+										style="margin-top:10px;">
+										Max: {{ vm.activeItem.reserve | number:4 }} {{ vm.activeItem.abbreviation }}
+									</div>
+								</div>
+							</div>
+
+							<div class="row" style="display:relative;">
+								<div class="col-xs-6">
+									<div class="form-group">
+										<div class="input-group">
+											<input 
+											type="number" 
+											class="form-control currency-input" 
+											placeholder="0.00" 
+											min="0"
+											ng-model="vm.sellUnum"
+											ng-keyup="vm.calcSellCurrencyAmount()">
+											<span class="input-group-addon">UD1</span>
+										</div>
+									</div>
+
+									<i class="fa fa-exchange currency-exchange-icon"></i>
+								</div>
+								<div class="col-xs-6">
+									<div class="form-group">
+										<div class="input-group">
+											<input 
+											type="number" 
+											class="form-control currency-input" 
+											placeholder="0.00"
+											min="0"
+											ng-model="vm.sellCurrency"
+											ng-keyup="vm.calcSellUnumAmount()">
+											<span class="input-group-addon">
+												{{ vm.activeItem.abbreviation }}
+											</span>
+										</div>
+									</div>
+								</div>								
+							</div>
+							<div ng-if="vm.error" class="bg-danger text-center" style="padding:10px; margin-bottom:10px;">
+								<strong>{{ vm.error }}</strong>
+							</div>
+							<div>
+								<button 
+									class="btn btn-primary btn-lg btn-block" 
+									ng-class="{disabled:!vm.sellCurrency || vm.error}"
+									ng-click="vm.confirmSellModal()">
+									Sell Unum
+								</button>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="exchange panel panel-default"  ng-if="vm.state=='send'">
+					<div class="panel-heading">
+						Send Unum
+					</div>
+					<div class="panel-body">
+						<form>
+							<div class="form-group">
+								<label>Send To</label>
+								<input type="text" ng-model="vm.transferTo" class="form-control" ng-keyup="vm.checkTransfer()">
+							</div>
+							<div class="form-group">
+								<label>Amount UD1</label>
+								<input type="number" ng-model="vm.transferAmount" class="form-control" ng-keyup="vm.checkTransfer()">
+							</div>
+							<div ng-if="vm.transferError" class="bg-danger text-center" style="padding:10px; margin-bottom:10px;">
+								<strong>{{ vm.transferError }}</strong>
+							</div>
+							<div>
+								<button 
+									class="btn btn-primary btn-lg btn-block" 
+									ng-class="{disabled:!vm.transferAmount || vm.transferError}"
+									ng-click="vm.confirmTransferModal()">
+									Send Unum
+								</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="text-center" ng-if="!vm.connected">
+			<h2>Ethereum Blockchain Not Connected</h2>
+			<p>
+				You don't seem to be connected to the Ethereum blockchain. May we suggest one of the following to help with that:
+			</p>
+			<div class="row m-t-20">
+				<div class="col-md-4 col-xs-12 text-center">
+					<div class="connect-option">
+						<a href="https://metamask.io" target="_">
+							<img src="/images/metamask.png" width="120" height="109">
+							<h3>MetaMask</h3>
+						</a>
+						<p>
+							A plugin for Chrome that allows you to connect directly to the Ethereum blockchain.
+						</p>
+					</div>
+				</div>
+				<div class="col-md-4 col-xs-12 text-center">
+					<div class="connect-option">
+						<a href="https://brave.com/" target="_">
+							<img src="/images/brave.png" width="120" height="109">
+							<h3>Brave</h3>
+						</a>
+						<p>
+							A new Browser, built for privacy, with MetaMask built in.
+						</p>
+					</div>
+				</div>
+				<div class="col-md-4 col-xs-12 text-center">
+					<div class="connect-option">
+						<a href="https://github.com/ethereum/mist" target="_">
+							<img src="/images/ethereum.svg" width="120" height="109">
+							<h3>Mist</h3>
+						</a>
+						<p>
+							Advanced users can use Mist to talk to the Unum Smart Contract directly.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container" ng-if="vm.state=='account'">
+		<div class="row">
+			Balance
+		{{ vm.userUnumBalance }}
+		</div>		
+	</div>
+</div>
+
+<script type="text/ng-template" id="transferModal.html">
+    <div class="modal-header">
+        <h3 class="modal-title">Send Unum</h3>
+    </div>
+    <div class="modal-body receipt">
+        <div class="text-center header">
+        	<div class="text-uppercase">
+        		You are sending
+        	</div>
+        	<div>
+        		<h1 class="bold">
+        			{{ vm.options.transferAmount.toFixed(4) }} UD1
+        		</h1>
+        	</div>
+        	<div class="text-uppercase">
+        		to
+        	</div>
+        		<h3 class="bold">
+        			{{ vm.options.transferTo }} 
+        		</h3>
+        	</div>
+        </div>
+    </div>
+    <div class="modal-footer">
+    	<div class="text-center">
+    		Review all the details and confirm your transfer below.
+    		<div class="m-t-10">
+    			<button 
+    				class="btn btn-primary btn-lg" 
+    				ng-click="vm.transfer()">
+    				<i class="fa fa-spinner fa-spin" ng-if="vm.confirmed"></i>
+					<span ng-if="!vm.confirmed">Confirm Transfer</span>
+					<span ng-if="vm.confirmed">Sending Transfer...</span>
+    			</button>
+    		</div>
+    	</div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="transferCompleteModal.html">
+    <div class="modal-header">
+        <h3 class="modal-title">Transfer Complete</h3>
+    </div>
+    <div class="modal-body receipt">
+        <div class="text-center header">
+        	<div class="text-uppercase">
+        		You sent
+        	</div>
+        	<div>
+        		<h1 class="bold">
+        			{{ vm.options.transferAmount.toFixed(4) }} UD1
+        		</h1>
+        	</div>
+        	<div class="text-uppercase">
+        		to
+        	</div>
+        		<h3 class="bold">
+        			{{ vm.options.transferTo }} 
+        		</h3>
+        	</div>
+        </div>
+    </div>
+    <div class="modal-footer">
+    	<button class="btn btn-success btn-lg" ng-click="vm.close()">
+    		Ok
+    	</button>
+    </div>
+</script>
+
+<script type="text/ng-template" id="buyModal.html">
+    <div class="modal-header">
+        <h3 class="modal-title">Buy Unum</h3>
+    </div>
+    <div class="modal-body receipt">
+        <div class="text-center header">
+        	<div class="text-uppercase">
+        		You are sending
+        	</div>
+        	<div>
+        		<h1 class="bold">
+        			{{ vm.options.amountCurrency.toFixed(8) }} {{ vm.options.activeCurrency.abbreviation }}
+        		</h1>
+        		@ ${{ vm.options.activeCurrency.price | number:2 }} per {{ vm.options.activeCurrency.abbreviation }}
+        	</div>        	
+        	<hr />
+        	<div class="fees">
+        		<div class="fee-row">
+        			<div class="fee-header">Conversion Fee</div>
+        			<div class="fee-dot fee-dot-long"></div>
+        			<div class="fee-footer">{{ vm.conversionFee | number:8 }} {{ vm.options.activeCurrency.abbreviation }}</div>
+        		</div>
+        	</div>
+        	<hr />
+        	<div class="text-uppercase">
+        		You will receive
+        	</div>
+        	<div>
+        		<h1 class="bold">
+        			{{ vm.buyReturn }} UD1
+        		</h1>
+        	</div>
+        	<div class="bg-info" ng-if="vm.options.activeCurrency.abbreviation != 'ETH' && vm.allowance > 0">
+        		You have approved a withdrawal up to {{ vm.allowance | number:8 }} {{ vm.options.activeCurrency.abbreviation }}.
+        	</div>
+        </div>
+    </div>
+    <div class="modal-footer">
+    	<div class="text-center" ng-if="vm.options.activeCurrency.abbreviation != 'ETH'">
+    		<div ng-if="!vm.approved">
+    			Approve the withdrawal from {{ vm.options.activeCurrency.abbreviation }} Smart Contract.
+    			<div class="m-t-10">
+	    			<button 
+	    				class="btn btn-primary btn-lg" 
+	    				ng-click="vm.approve()" 
+	    				ng-class="{disabled:( vm.approved || vm.approving) }">
+	    				<i class="fa fa-spinner fa-spin" ng-if="vm.approving"></i>
+	    				<i class="fa fa-check" ng-if="vm.approved"></i>
+	    				<span ng-if="!vm.approved && !vm.approving">Approve</span>
+	    				<span ng-if="vm.approving">Sending Transaction...</span>
+	    				<span ng-if="vm.approved">Approved</span>
+	    			</button>
+	    		</div>
+    		</div>
+    		
+    		<div ng-if="vm.approved">
+	    		Purchase Unum with {{ vm.options.activeCurrency.abbreviation }}.
+				<div class="m-t-10">
+	    			<button 
+	    				class="btn btn-primary btn-lg" 
+	    				ng-click="vm.buy()" 
+	    				ng-class="{disabled:!vm.approved || vm.confirmed}">
+	    				<i class="fa fa-spinner fa-spin" ng-if="vm.confirmed"></i>
+	    				<span ng-if="!vm.confirmed">Purchase</span>
+						<span ng-if="vm.confirmed">Sending Transaction...</span>
+	    			</button>
+	    		</div>
+	    	</div>
+    	</div>
+    	<div class="text-center" ng-if="vm.options.activeCurrency.abbreviation == 'ETH'">
+    		<strong>
+    			Please allow up to 1 minute for the transaction to be mined.
+    		</strong>
+    		<div class="m-t-10">
+    			<button 
+    				class="btn btn-primary btn-lg" 
+    				ng-click="vm.buy()"
+    				ng-class="{disabled:vm.confirmed}">
+    				<i class="fa fa-spinner fa-spin" ng-if="vm.confirmed"></i>
+					<span ng-if="!vm.confirmed">Purchase</span>
+					<span ng-if="vm.confirmed">Sending Transaction...</span>
+    			</button>
+    		</div>
+    	</div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="approvedModal.html">
+    <div class="modal-header">
+        <h3 class="modal-title">Purchase Complete</h3>
+    </div>
+    <div class="modal-body receipt">
+        <div class="text-center header">
+        	<div class="text-uppercase">
+        		Your purchase of
+        	</div>
+        	<div>
+        		<h1 class="bold">
+        			{{ vm.options.amountUD1 }} UD1
+        		</h1>
+        		completed successfully.
+        	</div>
+        </div>
+    </div>
+    <div class="modal-footer">
+    	<button class="btn btn-success btn-lg" ng-click="vm.close()">
+    		Ok
+    	</button>
+    </div>
+</script>
+
+<script type="text/ng-template" id="sellModal.html">
+    <div class="modal-header">
+        <h3 class="modal-title">Sell Unum</h3>
+    </div>
+    <div class="modal-body receipt">
+        <div class="text-center header">
+        	<div class="text-uppercase">
+        		You are selling
+        	</div>
+        	<div>
+        		<h1 class="bold">
+        			{{ vm.options.amountUnum.toFixed(8) }} UD1
+        		</h1>
+        		@ ${{ vm.options.activeCurrency.price | number:2 }} per {{ vm.options.activeCurrency.abbreviation }}
+        	</div>
+        	<hr />
+        	<div class="fees">
+        		<div class="fee-row">
+        			<div class="fee-header">Conversion Fee</div>
+        			<div class="fee-dot fee-dot-long"></div>
+        			<div class="fee-footer">{{ vm.conversionFee | number:8 }} UD1</div>
+        		</div>
+        		<div class="fee-row">
+        			<div class="fee-header">Reserve Deficit Penalty</div>
+        			<div class="fee-dot"></div>
+        			<div class="fee-footer">{{ vm.salePenalty | number:8 }} UD1</div>
+        		</div>
+        	</div>
+        	<hr />
+        	<div>
+        		<div class="text-uppercase">
+	        		You will receive
+	        	</div>
+        		<h1 class="bold">
+        			{{ vm.saleReturn | number:8 }} {{ vm.options.activeCurrency.abbreviation }}
+        		</h1>
+        	</div>
+        </div>
+    </div>
+    <div class="modal-footer">
+    	<div class="text-center">
+    		Review all the details and confirm your transaction below.
+    		<div class="m-t-10">
+    			<button 
+    				class="btn btn-primary btn-lg" 
+    				ng-click="vm.sell()"
+    				ng-class="{disabled:vm.confirmed}">
+    				<i class="fa fa-spinner fa-spin" ng-if="vm.confirmed"></i>
+					<span ng-if="!vm.confirmed">Confirm Sale</span>
+					<span ng-if="vm.confirmed">Sending Transaction...</span>
+    			</button>
+    		</div>
+    	</div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="saleCompleteModal.html">
+    <div class="modal-header">
+        <h3 class="modal-title">Sale Complete</h3>
+    </div>
+    <div class="modal-body receipt">
+        <div class="text-center header">
+        	<div class="text-uppercase">
+        		Your sale of
+        	</div>
+        	<div>
+        		<h1 class="bold">
+        			{{ vm.options.currencyOut | number:8 }} UD1
+        		</h1>
+        		completed successfully.
+        	</div>
+        </div>
+    </div>
+    <div class="modal-footer">
+    	<button class="btn btn-success btn-lg" ng-click="vm.close()">
+    		Ok
+    	</button>
+    </div>
+</script>
