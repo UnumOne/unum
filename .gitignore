@@ -62,4 +62,4 @@ worker/.env
 build
 
 # jekyll stuff
-learn
+./learn

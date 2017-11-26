@@ -1,0 +1,172 @@
+<nav class="app-nav no-badge"></nav>
+<main class="sticky" ng-class="{'no-sidebar': vm.sidebarClosed}">
+   <button class="sidebar-toggle">
+      <div class="sidebar-toggle-button" ng-click="vm.sidebarClosed = !vm.sidebarClosed">
+      	<span></span><span></span><span></span>
+      </div>
+   </button>
+   <aside class="sidebar">
+      <h1><a class="app-name-link" data-nosearch="" href="/">Unum</a></h1>
+      <div class="sidebar-nav">
+         <ul>
+            <li class="active"><a class="section-link" ui-sref="learn({'#': 'introduction'})">Introduction</a></li>
+            <li>
+               <ul class="children">
+                  <li><a class="section-link" ui-sref="learn({'#': 'what-is-unum'})">What is Unum?</a></li>
+                  <li><a class="section-link" ui-sref="learn({'#': 'stable-price'})">Stable Price</a></li>
+                  <li><a class="section-link" ui-sref="learn({'#': 'reserve'})">Auditable Reserves</a></li>
+                  <li><a class="section-link" ui-sref="learn({'#': 'decentralized'})">Decentralized</a></li>
+                  <li><a class="section-link" ui-sref="learn({'#': 'trustless'})">Trustless</a></li>                  
+               </ul>
+            </li>
+            <li class=""><a class="section-link" ui-sref="learn({'#': 'fees'})">Fees</a></li>
+            <li>
+               <ul class="children">
+                  <li><a class="section-link" ui-sref="learn({'#': 'buying'})">Buying</a></li>
+                  <li><a class="section-link" ui-sref="learn({'#': 'selling'})">Selling</a></li>
+                  <li><a class="section-link" ui-sref="learn({'#': 'reserve-deficit-sell-penalty'})">Reserve Deficit Sell Penalty</a></li>
+               </ul>
+            </li>
+            <li><a class="section-link" ui-sref="learn({'#': 'bonus-sales'})">Bonus Sales</a></li>
+         </ul>
+      </div>
+   </aside>
+   <section class="content">
+      <article class="markdown-section" id="main">
+         <h1 id="introduction">
+         	<a ui-sref="learn({'#': 'introduction'})" class="anchor">
+         		<span>Introduction</span>
+         	</a>
+         </h1>
+         
+         <h2 id="what-is-unum">
+         	<a ui-sref="learn({'#': 'what-is-unum'})" class="anchor">
+         		<span>What is Unum?</span>
+         	</a>
+         </h2>
+         <p>
+         	Unum is a decentralized, trustless cryptocurrency whose price is linked to the U.S. dollar.  One Unum is worth $1.
+         </p>
+
+         <h2 id="stable-price">
+            <a hui-sref="learn({'#': 'stable-price'})" class="anchor">
+               <span>Stable Price</span>
+            </a>
+         </h2>
+         <p>
+            Whenever a user buys or sells Unum, the Unum Smart Contract looks up the current US dollar value of the exchanged cryptocurrency on another smart contract called the Price Oracle. The Price Oracle is constantly being updated with the current average price of crypto-currencies.
+         </p>
+         
+         <h2 id="reserve">
+         	<a ui-sref="learn({'#': 'reserve'})" class="anchor">
+         		<span>Auditable Reserves</span>
+         	</a>
+         </h2>
+         <p>
+         	Unum can be purchased for a variety of other cryptocurrencies. The cryptocurrency that is used to purchase Unum is held in the by Unum Smart Contract in reserve. The total value held by the Unum Smart Contract reserve is instantly auditable on the Etherum blockchain.
+         </p>
+         
+         <h2 id="decentralized">
+         	<a ui-sref="learn({'#': 'decentralized'})" class="anchor">
+         		<span>Decentralized</span>
+         	</a>
+         </h2>
+         <p>
+         	Exchanging cryptocurrencies for Unum, and vice-versa, occurs directly through the Unum Smart Contract deployed on the Ethereum blockchain. There is no intermediary organization to handle the exhange, no matching of buyers and sellers, and no approval needed.
+         </p>
+         <p>
+         	Unum can be purchased on this website by users with an Ethereum blockchain plugin such as <a href="https://metamask.io/" target="_blank">MetaMask</a>, or through the use of external tools such as <a href="https://github.com/ethereum/mist/releases" target="_blank">Mist</a>.
+         </p>
+         
+         <h2 id="trustless">
+         	<a ui-sref="learn({'#': 'trustless'})" class="anchor">
+         		<span>Trustless</span>
+         	</a>
+         </h2>
+         <p>
+         	When we say Unum is trustless, we mean that the owner of the Unum Smart Contract <strong>cannot</strong>:
+         </p>
+         <ul>
+            <li>Withdraw tokens or Ethereum from the Unum Smart Contract reserve</li>
+            <li>Create or issue Unum</li>
+            <li>Move Unum between accounts</li>
+            <li>Destroy the Unum Smart Contract</li>
+            <li>Prevent the sale of Unum for cryptocurrencies in the reserve</li>
+            <li>Change the exchange price of Unum from $1</li>
+            <li>Change the conversion fee for buying or selling Unum</li>
+         </ul>
+         <p>
+         	All of this is enforced by the Unum Smart Contract, which cannot be altered, even by the owner. The Unum Smart Contract is open source and can be <a href="https://github.com/UnumOne/unum" target="_">viewed on Github</a>.
+         </p>
+         <p>
+         	In addition, there was no pre-sale, pre-mine, or ICO of Unum.
+         </p>
+         
+         <h1 id="fees">
+         	<a ui-sref="learn({'#': 'fees'})" class="anchor">
+         		<span>Fees</span>
+         	</a>
+         </h1>
+         <p>
+            The Unum Smart Contract charges a .05% conversion fee to purchase or sell Unum for any of the supported cryptocurrencies.  The conversion fee goes to pay for the costs of maintaining the Price Oracle with a consistent feed of data.
+         </p>
+         
+         <h2 id="buying">
+         	<a ui-sref="learn({'#': 'buying'})" class="anchor">
+         		<span>Buying</span>
+         	</a>
+         </h2>
+         <p>
+         	There is a .05% conversion fee to purchase Unum. In other words, for every $100 worth of cryptocurrency sent in to purchase Unum, 5 cents is withheld as a fee.
+         </p>
+         <p>
+         	For example, if the price of Ethereum is $320, and you traded 1 Ether for Unum, you would receive 319.84 Unum.
+         </p>
+         
+         <h2 id="selling">
+         	<a ui-sref="learn({'#': 'selling'})" class="anchor">
+         		<span>Selling</span>
+         	</a>
+         </h2>
+         <p>
+         	There is a .05% conversion fee to trade Unum for any cryptocurrency held in the Unum Smart Contract reserve. In other words, for every $100 worth of Unum converted into another cryptocurrency held in the Unum Reserve, 5 cents worth is held in fees.
+         </p>
+         <p>
+         	For example, if you traded 320 Unum for Ether, and the price of Ether is $320, the conversion fee would equal 16 cents. The conversion fee is deducted from the amount of Unum sent in, and the resulting amount of Unum is then converted into Ether.  Any Unum traded for cryptocurrencies held in the reserve is destroyed after the trade is complete.
+         </p>
+         
+         <h2 id="reserve-deficit-sell-penalty">
+         	<a ui-sref="learn({'#': 'reserve-deficit-sell-penalty'})"  class="anchor">
+         		<span>Reserve Deficit Sell Penalty</span>
+         	</a>
+         </h2>
+         <p>
+         	Because the values of cryptocurrencies ar highly volatile, it is possible for the value of the cryptocurrencies held in reserve by the Unum Smart contract to become worth less than the total supply of Unum issued. In such times a Reserve Deficit Sell Penalty is applied to all exchanges of Unum into cryptocurrrencies held in the reserve.  This penalty is meant to discourage Unum traders from increasing the reserve deficit.
+         </p>
+         <p>
+         	<strong>The Reserve Deficit Sell Penalty is equal to 1/10th of the reserve deficit percent.</strong>  If the US Dollar value of the reserve held by the Unum Smart Contract greater than the number of Unum in circulation, then no Reserve Deficit Sell Penalty is applied.
+         </p>
+         <p>
+         	For example, if there are 1,000,000 Unum in circulation, but the US dollar value of the reserve held by the Unum Smart Contract is worth only $950,000, then the reserve has a deficit of 5%.  This would equate to a .5% Reserve Deficit Sell Penalty, which is in addition to the conversion fee described above.  Unlike the conversion fee, the Reserve Deficit Sell Penalty is not removed from the available Unum Smart Contract reserve balance.
+         </p>
+         <p>
+         	In this case, if you traded 320 Unum for Ether, and the price of Ether is $320, the conversion fee of .05% would equal 16 cents and the Reserve Deficit Sale Penalty would equal $2.00.
+         </p>
+         
+         <h1 id="bonus-sales">
+         	<a ui-sref="learn({'#': 'bonus-sales'})"  class="anchor">
+         		<span>Bonus Sales</span>
+         	</a>
+         </h1>
+         <p>
+         	The stability of Unum is increased when the value of the cryptocurrencies held in reserve by the Unum Smart Contract is increased. To encourage users to purchase Unum, and increase it's stability, occasionally Bonus Sale events are held.
+         </p>
+         <p>
+         	During these events, and users who purchase Unum will receive an additional percentage bonus of Unum.  These bonuses start at 1%, and increase by 1% each day until the Bonus Sale is over (no more than 10 days), or the Unum Cap for the sale is reached.
+         </p>
+         <p>
+         	Any upcoming Bonus Sales will be announced in advance on our Blog.
+         </p>
+      </article>
+   </section>
+</main>
