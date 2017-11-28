@@ -104,7 +104,7 @@ angular.module('unum').controller('StoreController', [
 			});
 
 			var UnumDollarJson = (netId != 3) ? 'UnumDollar.json' : 'UnumDollarRopsten.json';
-			
+
 			ContractService.get(UnumDollarJson).then(function(data) {
 				var contract = TruffleContract(data);
 				contract.setProvider(app.web3Provider);
@@ -462,8 +462,6 @@ angular.module('unum').controller('StoreController', [
 			vm.options.items[vm.options.activeCurrency.abbreviation].contract.allowance.call(vm.options.user, vm.options.unumSmartContract.address)
 				.then(function(allowance){
 					vm.allowance = web3.fromWei(allowance.toNumber(),'ether');
-					console.log(vm.allowance);
-					console.log(vm.options.amountCurrency)
 					if (vm.options.amountCurrency <= vm.allowance){
 						vm.approved = true;						
 					}
@@ -561,7 +559,6 @@ angular.module('unum').controller('StoreController', [
 					gasPrice: gasPrice
 				}).then(function(tx) {
 					let currencyOut = web3.fromWei(tx.logs[0].args._numCurrencyOut.toNumber(), 'ether');
-					//console.log(currencyOut);
 					$uibModalInstance.close(currencyOut);
 				});
 			} else {
@@ -570,7 +567,6 @@ angular.module('unum').controller('StoreController', [
 					gasPrice: gasPrice
 				}).then(function(tx) {
 					let currencyOut = web3.fromWei(tx.logs[1].args._numCurrencyOut.toNumber(), 'ether');
-					console.log(currencyOut);
 					$uibModalInstance.close(currencyOut);
 				});
 				
